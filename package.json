@@ -1,0 +1,48 @@
+{
+  "name": "@mist3rbru/curry",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "homepage": "https://github.com/Mist3rBru/curry#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mist3rBru/curry"
+  },
+  "author": {
+    "name": "Bruno Rocha",
+    "email": "brunorocha2674@gmail.com",
+    "url": "https://github.com/Mist3rBru"
+  },
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "lint": "tsc --noEmit && prettier --write .",
+    "build": "unbuild",
+    "test": "vitest --run",
+    "test:w": "vitest --watch",
+    "ci": "run-s lint build test",
+    "publish": "changeset publish",
+    "release": "run-s ci publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.0",
+    "changeset": "^0.2.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.33.0"
+  }
+}
